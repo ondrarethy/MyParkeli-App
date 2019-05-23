@@ -7,7 +7,16 @@
                     <ViewCell>
                         <StackLayout Margin="16">
                             <Label Text="{Binding Title}" FontAttributes="Bold" FontSize="Medium"/>
-                            <Label Text="{Binding Subtitle}" FontSize="Small"/>
+                            <Label Text="{Binding Address}" FontSize="Small"/>
+                            <Label>
+                                <Label.FormattedText> 
+                                    <FormattedString>
+                                        <Span Text="{Binding Free}" FontSize="Small"/>
+                                        <Span Text=" / " FontSize="Small"/>
+                                        <Span Text="{Binding MaxCap}" FontSize="Small"/>
+                                    </FormattedString>
+                                </Label.FormattedText> 
+                            </Label>
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>

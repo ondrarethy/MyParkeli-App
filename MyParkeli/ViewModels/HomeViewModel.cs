@@ -14,12 +14,13 @@ namespace MyParkeli.ViewModels
         {
             this.viewPoints = new List<ItemViewModel>
             {
-                new ItemViewModel {Title = "title1", Subtitle = "subtitle1"},
-                new ItemViewModel {Title = "title2", Subtitle = "subtitle2"},
-                new ItemViewModel {Title = "title3", Subtitle = "subtitle3"},
-                new ItemViewModel {Title = "title4", Subtitle = "subtitle4"},
-                new ItemViewModel {Title = "title5", Subtitle = "subtitle5"},
-                new ItemViewModel {Title = "title6", Subtitle = "subtitle6"},
+                new ItemViewModel {Title = "parkoviste1", Address = "adresa1", Free = 24, MaxCap = 100},
+                new ItemViewModel {Title = "parkoviste2", Address = "adresa2", Free = 109, MaxCap = 250},
+                new ItemViewModel {Title = "parkoviste3", Address = "adresa3", Free = 14, MaxCap = 75},
+                new ItemViewModel {Title = "parkoviste4", Address = "adresa4", Free = 62, MaxCap = 125},
+                new ItemViewModel {Title = "parkoviste5", Address = "adresa5", Free = 192, MaxCap = 320},
+                new ItemViewModel {Title = "parkoviste6", Address = "adresa6", Free = 2, MaxCap = 18},
+                new ItemViewModel {Title = "parkoviste7", Address = "adresa7", Free = 101, MaxCap = 115},
             };
         }
 
