@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="MyParkeli.Views.TestView">
+    <ContentPage.Content>
+        <ScrollView BackgroundColor="#11000000">
+            <Grid>
+                <AbsoluteLayout> 
+                    <Image Source="carview.png"/>
+                </AbsoluteLayout>
+                <StackLayout Margin="0,150,0,0">
+                    <StackLayout Padding="15" 
+                                 Spacing="15">
+                        <StackLayout>
+                            <Frame CornerRadius="10" 
+                                   VerticalOptions="Start"
+                                   HasShadow="True"
+                                   Padding="0"
+                                   BackgroundColor="White">
+                                
+                                <AbsoluteLayout Padding="10">
+                                    <StackLayout>
+                                        <Label>
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="Title" FontSize="Medium" FontAttributes="Bold"/>
+                                                    <Span Text="   ⬤ Live" TextColor="Red" FontSize="Medium" FontAttributes="Bold"/>
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
+                                        
+                                        <Label Text="Address" FontSize="Small"/>
+                                        <Label>
+                                            <Label.FormattedText> 
+                                                <FormattedString>
+                                                    <Span Text="100" FontSize="Small"/>
+                                                    <Span Text=" / " FontSize="Small"/>
+                                                    <Span Text="100" FontSize="Small"/>
+                                                </FormattedString>
+                                            </Label.FormattedText> 
+                                        </Label>
+                                        <Label>
+                                            <Label.FormattedText> 
+                                                <FormattedString>
+                                                    <Span Text="Lat: " FontSize="Small"/>
+                                                    <Span Text="40.741895" FontSize="Small"/>
+                                                    <Span Text="   Lon: " FontSize="Small"/>
+                                                    <Span Text="-73.989308" FontSize="Small"/>
+                                                </FormattedString>
+                                            </Label.FormattedText> 
+                                        </Label>
+                                    </StackLayout>
+                                </AbsoluteLayout>
+                                
+                            </Frame>
+                        </StackLayout>
+                        
+                    </StackLayout>
+                </StackLayout>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

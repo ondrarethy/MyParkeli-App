@@ -1,26 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="MyParkeli.Views.HomePage">
     <ContentPage.Content>
-        <ListView HasUnevenRows="True" x:Name="usersListView" CachingStrategy="RecycleElement" ItemsSource="{Binding ViewPoints}">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <StackLayout Margin="16">
-                            <Label Text="{Binding Title}" FontAttributes="Bold" FontSize="Medium"/>
-                            <Label Text="{Binding Address}" FontSize="Small"/>
-                            <Label>
-                                <Label.FormattedText> 
-                                    <FormattedString>
-                                        <Span Text="{Binding Free}" FontSize="Small"/>
-                                        <Span Text=" / " FontSize="Small"/>
-                                        <Span Text="{Binding MaxCap}" FontSize="Small"/>
-                                    </FormattedString>
-                                </Label.FormattedText> 
-                            </Label>
+        
+        
+        <ScrollView BackgroundColor="#11000000">
+            <Grid>
+                <AbsoluteLayout> 
+                    <Image Source="carview.png"/>
+                </AbsoluteLayout>
+                <AbsoluteLayout> 
+                    <Image Source="parkeliLogo.png"
+                           AbsoluteLayout.LayoutBounds=".5,0,.5,.15" 
+                           AbsoluteLayout.LayoutFlags="All"/>
+                </AbsoluteLayout>
+                <ListView IsPullToRefreshEnabled="true" HasUnevenRows="True" x:Name="usersListView" CachingStrategy="RecycleElement" ItemsSource="{Binding ViewPoints}">
+                    <ListView.Header>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Header"
+                                   TextColor="Transparent"
+                                   BackgroundColor="Transparent" 
+                                   HeightRequest="150"/>
                         </StackLayout>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+                    </ListView.Header>        
+                    <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <StackLayout Margin="15,7.5">
+                                            <Frame CornerRadius="10" 
+                                                   VerticalOptions="Start"
+                                                   HasShadow="false"
+                                                   Padding="0"
+                                                   BackgroundColor="White">
+                                                <StackLayout Padding="10">
+                                                    <Label>
+                                                        <Label.FormattedText>
+                                                            <FormattedString>
+                                                                <Span Text="{Binding Title}" FontSize="Medium" FontAttributes="Bold"/>
+                                                                <Span Text="   ⬤ Live" TextColor="{Binding Live, FallbackValue='transparent'}" FontSize="Medium" FontAttributes="Bold"/>
+                                                            </FormattedString>
+                                                        </Label.FormattedText>
+                                                    </Label>        
+                                            <Label Text="{Binding Address}" FontSize="Small"/>
+                                                    <Label>
+                                                        <Label.FormattedText> 
+                                                            <FormattedString>
+                                                                <Span Text="{Binding Free}" FontSize="Small"/>
+                                                                <Span Text=" / " FontSize="Small"/>
+                                                                <Span Text="{Binding MaxCap}" FontSize="Small"/>
+                                                            </FormattedString>
+                                                        </Label.FormattedText> 
+                                                    </Label>
+                                                    <Label>
+                                                        <Label.FormattedText> 
+                                                            <FormattedString>
+                                                                <Span Text="Lat: " FontSize="Small"/>
+                                                                <Span Text="{Binding Lat}" FontSize="Small"/>
+                                                                <Span Text="   Lon: " FontSize="Small"/>
+                                                                <Span Text="{Binding Lon}" FontSize="Small"/>
+                                                            </FormattedString>
+                                                        </Label.FormattedText> 
+                                                    </Label>
+                                                </StackLayout>
+                                            </Frame>
+                                        </StackLayout>
+                                    </ViewCell>
+                                </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

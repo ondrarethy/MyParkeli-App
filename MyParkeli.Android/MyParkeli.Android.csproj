@@ -90,6 +90,7 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
     <AndroidResource Include="Resources\drawable\parkeliLogo.png" />
     <AndroidResource Include="Resources\drawable\bg.png" />
+    <AndroidResource Include="Resources\drawable\carview.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

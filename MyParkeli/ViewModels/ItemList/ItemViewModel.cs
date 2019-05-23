@@ -28,5 +28,23 @@ namespace MyParkeli.ViewModels.ItemList
             get { return maxcap; }
             set { maxcap = value; this.OnPropertyChanged(); }
         }
+        public int lon;
+        public int Lon
+        {
+            get { return lon; }
+            set { lon = value; this.OnPropertyChanged(); }
+        }
+        public int lat;
+        public int Lat
+        {
+            get { return lat; }
+            set { lat = value; this.OnPropertyChanged(); }
+        }
+        public string live;
+        public string Live
+        {
+            get { if (live == "true") { return "red"; }; return live; }
+            set { live = value; this.OnPropertyChanged(); }
+        }
     }
 }

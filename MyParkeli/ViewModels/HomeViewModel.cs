@@ -14,7 +14,7 @@ namespace MyParkeli.ViewModels
         {
             this.viewPoints = new List<ItemViewModel>
             {
-                new ItemViewModel {Title = "parkoviste1", Address = "adresa1", Free = 24, MaxCap = 100},
+                new ItemViewModel {Title = "parkoviste1", Address = "adresa1", Free = 24, MaxCap = 100, Live = "true"},
                 new ItemViewModel {Title = "parkoviste2", Address = "adresa2", Free = 109, MaxCap = 250},
                 new ItemViewModel {Title = "parkoviste3", Address = "adresa3", Free = 14, MaxCap = 75},
                 new ItemViewModel {Title = "parkoviste4", Address = "adresa4", Free = 62, MaxCap = 125},
