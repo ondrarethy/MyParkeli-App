@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="MyParkeli.Views.LoginPage" BackgroundImage="bg.png">
+    <ContentPage.Content>  
+        <Grid>
+            <Image Source="bg.png" />
+            <AbsoluteLayout>
+                <Image AbsoluteLayout.LayoutBounds=".5,.1,1,.15" 
+                       AbsoluteLayout.LayoutFlags="All" 
+                       Source="parkeliLogo.png"
+                       /> 
+                <Entry x:Name="Email" Text="{Binding Email}" 
+                       Placeholder="Email"   
+                       PlaceholderColor="#BBFFFFFF"   
+                       Keyboard="Email"  
+                       TextColor="White"
+                       Margin="30,0"
+                       AbsoluteLayout.LayoutBounds=".5,.55,1,.1"  
+                       AbsoluteLayout.LayoutFlags="All"
+                       />  
+                <Entry x:Name="Password" Text="{Binding Password}" 
+                       Placeholder="Password"   
+                       PlaceholderColor="#BBFFFFFF"   
+                       IsPassword="True"  
+                       TextColor="White"
+                       Margin="30,0"
+                       AbsoluteLayout.LayoutBounds=".5,.65,1,.1" 
+                       AbsoluteLayout.LayoutFlags="All"
+                       />  
+                <Button Command="{Binding SubmitCommand}" 
+                        Text="Login"
+                        TextColor="White"  
+                        FontAttributes="Bold" 
+                        FontSize="Large"  
+                        BackgroundColor="#137fca" 
+                        BorderRadius="50" 
+                        Margin="80,0"
+                        AbsoluteLayout.LayoutBounds=".5,.8,1,.1" 
+                        AbsoluteLayout.LayoutFlags="All"
+                        />
+                <Label AbsoluteLayout.LayoutBounds=".5,1,1,.1" 
+                       AbsoluteLayout.LayoutFlags="All"
+                       LineBreakMode="WordWrap"
+                       HorizontalTextAlignment="Center"
+                       >
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Don't have an account? "
+                                  TextColor="#50FFFFFF"
+                                  />
+                            <Span Text="Sign Up"
+                                  TextColor="#BBFFFFFF"
+                                  TextDecorations="Underline"
+                                  >
+                                <Span.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding ClickCommand}"
+                                                          CommandParameter="https://pslib.cz" 
+                                                          />
+                                </Span.GestureRecognizers>
+                            </Span>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </AbsoluteLayout>
+        </Grid>
+        
+    </ContentPage.Content>  
+</ContentPage>
