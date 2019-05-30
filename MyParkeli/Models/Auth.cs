@@ -1,6 +1,10 @@
 ﻿using System;
+using System.IO;
+using System.Net;
+using System.Net.Http;
 using System.Security.Cryptography;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace MyParkeli.Models
 {
@@ -18,9 +22,18 @@ namespace MyParkeli.Models
             }
             return false;
         }*/
-        public static string GetHashFromDB(string email)
+        public static async Task<string> GetHashFromDB(string user)
         {
-            return "2BB80D537B1DA3E38BD30361AA855686BDE0EACD7162FEF6A25FE97BF527A25B";
+            //https://myparkeli.firebaseio.com/users/admin.json
+
+            string html = string.Empty;
+            string url = string.Format("https://myparkeli.firebaseio.com/users/{0}.json",user);
+
+            using (var client = new HttpClient())
+            {
+                return await client.GetStringAsync(url);
+            }
+
         }
         public static byte[] GetHash(string inputString)
         {

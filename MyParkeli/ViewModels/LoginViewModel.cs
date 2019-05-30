@@ -4,7 +4,9 @@ using System.Windows.Input;
 using MyParkeli.Views;
 using MyParkeli.Models;
 using Xamarin.Forms;
+using System.Data.SQLite;
 using System.Text;
+using System.Runtime.CompilerServices;
 
 namespace MyParkeli.ViewModels
 {
@@ -12,6 +14,7 @@ namespace MyParkeli.ViewModels
     {
         public Action DisplayInvalidLoginPrompt;
         public event PropertyChangedEventHandler PropertyChanged = delegate { };
+        string loginTxt = "Login";
         private string email;
         public string Email
         {
@@ -41,18 +44,50 @@ namespace MyParkeli.ViewModels
         {
             Device.OpenUri(new System.Uri(url));
         });
-        public void OnSubmit()
+        public async void OnSubmit()
         {
-            Console.WriteLine("Email is: " + email);
-            Console.WriteLine(Auth.GetHashFromDB(email));
-            Console.WriteLine("Pass is: " + password);
-            Console.WriteLine(Auth.GetHashString(password));
-            if (Auth.GetHashFromDB(email) != Auth.GetHashString(password))
+            loginTxt = "Loading...";
+            OnPropertyChanged(nameof(LoginTxt));
+            //Console.WriteLine("##############################################################################################################################");
+            //Console.WriteLine("Email is: " + email);
+            //Console.WriteLine(await Auth.GetHashFromDB(email));
+            //Console.WriteLine("Pass is: " + password);
+            //Console.WriteLine(Auth.GetHashString(password));
+            var hash_db = await Auth.GetHashFromDB(email);
+            hash_db = hash_db.Trim('"');
+            var hash = Auth.GetHashString(password);
+            if (email == null || password == null)
+            {
+                DisplayInvalidLoginPrompt(); 
+                loginTxt = "Login";
+                OnPropertyChanged(nameof(LoginTxt));
+            }
+            else if (hash_db != hash)
             {
                 DisplayInvalidLoginPrompt();
-            } else
+                loginTxt = "Login";
+                OnPropertyChanged(nameof(LoginTxt));
+            } 
+            else if (hash_db == hash)
             {
                 App.Current.MainPage = new NavigationPage(new HomePage());
+            }
+            else
+            {
+                DisplayInvalidLoginPrompt();
+                loginTxt = "Login";
+                OnPropertyChanged(nameof(LoginTxt));
+            }
+        }
+        public void OnPropertyChanged([CallerMemberName]string name = "")
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+        }
+        public string LoginTxt
+        {
+            get
+            {
+                return $"{loginTxt}";
             }
         }
 

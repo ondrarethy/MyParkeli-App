@@ -27,7 +27,7 @@
                        AbsoluteLayout.LayoutFlags="All"
                        />  
                 <Button Command="{Binding SubmitCommand}" 
-                        Text="Login"
+                        Text="{Binding LoginTxt}"
                         TextColor="White"  
                         FontAttributes="Bold" 
                         FontSize="Large"  
