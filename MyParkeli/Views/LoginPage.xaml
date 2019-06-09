@@ -9,7 +9,7 @@
                        Source="parkeliLogo.png"
                        /> 
                 <Entry x:Name="Email" Text="{Binding Email}" 
-                       Placeholder="Email"   
+                       Placeholder="Username"   
                        PlaceholderColor="#BBFFFFFF"   
                        Keyboard="Email"  
                        TextColor="White"

@@ -27,7 +27,7 @@ namespace MyParkeli.Models
             //https://myparkeli.firebaseio.com/users/admin.json
 
             string html = string.Empty;
-            string url = string.Format("https://myparkeli.firebaseio.com/users/{0}.json",user);
+            string url = string.Format("https://myparkeli.firebaseio.com/users2/{0}/pass.json",user);
 
             using (var client = new HttpClient())
             {
