@@ -21,13 +21,5 @@
 - Application is based on **MVVM pattern** for more understanding of program
 - User needs to be **connected to the internet** to correctly read the *Firebase Realtime Databse* and run the application
 - App is based on **Firebase by Google** which is realtime json database
-- Every user should be able to:
-
-```
-          - See weather widget
-          - Display all information
-          - See reserve button (only Parkeli+ user)
-         
-```
 
 ©Ondřej Rethy (https://rethy.cz/) - SPŠSE a VOŠ Liberec (https://pslib.cz/)
